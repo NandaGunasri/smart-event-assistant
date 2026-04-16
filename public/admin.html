@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Command Center | EventFlow AI</title>
+    <link href="css/style.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="header-title"><span class="text-magenta">Command</span> Center</div>
+        <div style="display: flex; gap: 1rem; align-items: center;">
+            <a href="index.html" class="btn btn-secondary" style="padding: 0.4rem 1rem; font-size: 0.8rem; border-color: #555; color:#ccc;">Home</a>
+            <button id="emergencyToggle" class="btn" style="background:#444; color:#fff;">Emergency Mode: OFF</button>
+        </div>
+    </header>
+
+    <div class="container">
+        <!-- Live Alert Streams -->
+        <div class="card" style="margin-bottom: 2rem;">
+            <h3 style="margin-bottom: 1rem; display: flex; justify-content: space-between;">
+                <span>📡 Live System Intelligence</span>
+                <span id="updatePulse" style="width: 10px; height: 10px; border-radius: 50%; background: var(--success-color); display: inline-block; transition: opacity 0.3s;"></span>
+            </h3>
+            <div id="alertsStream" style="height: 100px; overflow-y: auto; font-family: monospace; font-size: 0.9rem; color: var(--text-muted); background: rgba(0,0,0,0.5); padding: 1rem; border-radius: 4px;">
+                > System Online. Gathering initial data...
+            </div>
+        </div>
+
+        <!-- Heatmap Grid -->
+        <div class="grid" id="heatmapGrid">
+            <!-- Populated by JS -->
+        </div>
+
+        <div class="admin-controls">
+            <h3 style="margin-bottom: 1rem;">Simulation Controls</h3>
+            <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+                <button class="btn btn-secondary sim-btn" data-zone="Gate A" data-spike="200">Spike Gate A</button>
+                <button class="btn btn-secondary sim-btn" data-zone="Hall A" data-spike="500">Spike Hall A</button>
+                <button class="btn" id="resetBtn" style="border: 1px solid #666;">Reset Scenario</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/admin.js"></script>
+</body>
+</html>

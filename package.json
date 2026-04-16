@@ -1,0 +1,24 @@
+{
+  "name": "smart-event-assistant",
+  "version": "1.0.0",
+  "description": "An AI-driven web application designed to enhance physical event experiences by optimizing crowd movement, predicting wait times, and providing real-time navigation assistance in large venues.",
+  "main": "index.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NandaGunasri/smart-event-assistant.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/NandaGunasri/smart-event-assistant/issues"
+  },
+  "homepage": "https://github.com/NandaGunasri/smart-event-assistant#readme",
+  "dependencies": {
+    "express": "^5.2.1"
+  }
+}

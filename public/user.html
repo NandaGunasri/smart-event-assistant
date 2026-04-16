@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Assistant | EventFlow AI</title>
+    <link href="css/style.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="header-title"><span class="text-cyan">EventFlow</span> Assistant</div>
+        <a href="index.html" class="btn btn-secondary" style="padding: 0.4rem 1rem; font-size: 0.8rem;">Home</a>
+    </header>
+
+    <div class="container">
+        <!-- Live Alert Banner -->
+        <div id="liveAlertBanner" class="live-alerts-box">
+            <strong>⚠️ CRITICAL ALERT:</strong> <span id="liveAlertText">Emergency protocol activated!</span>
+        </div>
+
+        <div class="card" style="max-width: 600px; margin: 0 auto;">
+            <p class="text-muted" style="margin-bottom: 2rem;">Tell me where you are and where you want to go, and I'll find the most optimized route avoiding heavy crowds.</p>
+            
+            <div class="form-group">
+                <label>Current Location</label>
+                <select id="currentLocationBtn" class="form-control">
+                    <option value="Gate A">Gate A (Main Entry)</option>
+                    <option value="Gate B">Gate B (North Entry)</option>
+                    <option value="Hall A">Hall A</option>
+                    <option value="Hall B">Hall B</option>
+                    <option value="Food Court">Food Court</option>
+                    <option value="Tech Zone">Tech Zone</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>Destination</label>
+                <select id="destinationBtn" class="form-control">
+                    <option value="Hall A">Hall A</option>
+                    <option value="Hall B">Hall B</option>
+                    <option value="Food Court">Food Court</option>
+                    <option value="Tech Zone">Tech Zone</option>
+                    <option value="Exit">Nearest Exit</option>
+                </select>
+            </div>
+
+            <button id="askAIBtn" class="btn btn-primary" style="width: 100%; margin-top: 1rem;">
+                <span class="icon">✨</span> Ask AI
+            </button>
+
+            <!-- Results Section -->
+            <div id="aiResponsePanel" class="ai-response">
+                <div style="margin-bottom: 1.5rem;">
+                    <div class="result-label">Suggested Route</div>
+                    <div id="resRoute" class="result-value text-cyan text-typing">Computing optimal path...</div>
+                </div>
+
+                <div style="display: flex; gap: 2rem; margin-bottom: 1.5rem;">
+                    <div class="result-item">
+                        <div class="result-label">Est. Wait Time</div>
+                        <div id="resWaitTime" class="result-value">-</div>
+                    </div>
+                    <div class="result-item">
+                        <div class="result-label">Crowd Level</div>
+                        <div id="resCrowd" class="result-value">-</div>
+                    </div>
+                </div>
+
+                <div class="result-item">
+                    <div class="result-label">AI Decision / Alert</div>
+                    <div id="resDecision" class="result-value" style="color: #fff; background: rgba(0,0,0,0.5); padding: 0.5rem; border-radius: 4px;">-</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/user.js"></script>
+</body>
+</html>
