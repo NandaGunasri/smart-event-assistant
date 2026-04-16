@@ -23,6 +23,10 @@ document.addEventListener('DOMContentLoaded', () => {
             const res = await fetch(`/api/suggest-route?from=${encodeURIComponent(from)}&to=${encodeURIComponent(to)}`);
             const data = await res.json();
             
+            if (!res.ok) {
+                throw new Error(data.error || 'Server returned an error');
+            }
+            
             setTimeout(() => {
                 document.getElementById('resRoute').textContent = data.route;
                 
